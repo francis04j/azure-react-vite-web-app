@@ -46,6 +46,7 @@ function App() {
         body: JSON.stringify(formData)
       });
 
+      console.log("This is the response", response)
       const data = await response.json();
 
       if (!response.ok) {
