@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { CreditCard, Bike, MapPin, User } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://app-250125232314.azurewebsites.net//api/bike/store';
+
 interface FormData {
   customerName: string;
   bikeLocation: string;
@@ -38,7 +40,7 @@ function App() {
     setSuccess(false);
 
     try {
-      const response = await fetch('https://app-250125114847.azurewebsites.net/api/bike/store', {
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
